@@ -7,11 +7,11 @@ set bs=indent,eol,start		" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
 set number		" start vim with line numbers displayed
 
-if has("vms")
-	set nobackup	" VMS system keeps old versions of files already
-else
-	set backup	" backup file with same name plus '~'
-endif
+"if has("vms")
+"	set nobackup	" VMS system keeps old versions of files already
+"else
+"	set backup	" backup file with same name plus '~'
+"endif
 
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 			" than 50 lines of registers
@@ -26,7 +26,13 @@ map <C-l> <C-W>l
 
 " a <Tab> in front of a line insters blanks according to 'shiftwidth'
 set smarttab
-set shiftwidth=4
+set shiftwidth=8
+
+
+set wrap		" This changes how text is displayed, not the text in the buffer
+set linebreak		" Wrap long lines at a character in 'breakat'
+set breakat=" "
+set textwidth=80	" Maximum width of text that is being inserted
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
